@@ -12,10 +12,10 @@ app.use(cors())
 
 connectDB()
 
-app.use('/api/web', authRouter)
+app.use('/api', authRouter)
 
 let server = app.listen(5000, () => {
     console.log('Socket is listen on 5000')
 })
 
-websockets(server);
+// websockets(server);
