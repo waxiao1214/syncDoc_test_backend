@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 50000
+
 const express = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -14,7 +16,9 @@ connectDB()
 
 app.use('/api', authRouter)
 
-let server = app.listen(5000, () => {
+
+
+let server = app.listen(PORT, () => {
     console.log('Socket is listen on 5000')
 })
 
