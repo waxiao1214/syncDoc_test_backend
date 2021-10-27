@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const serverless = require('serverless-http')
 const cookieParser = require('cookie-parser')
-const websockets = require('./websockets')
-const authRouter = require('./routes/auth')
-const connectDB = require('./config/db')
+const websockets = require('./src/websockets')
+const authRouter = require('./src/routes/auth')
+const connectDB = require('./src/config/db')
 const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
