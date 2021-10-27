@@ -22,4 +22,4 @@ let server = app.listen(PORT, () => {
     console.log('Socket is listen on 5000')
 })
 
-// websockets(server);
+websockets(server);
