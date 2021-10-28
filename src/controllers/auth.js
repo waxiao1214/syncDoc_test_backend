@@ -11,7 +11,6 @@ const createToken = (id) => {
 const login = async (req, res) => {
   const request = JSON.stringify(req.body)
   const { username, password, hostname } = JSON.parse(request)
-
   const user = await User.findOne({
     "username": username,
   }, function(err, result) {
@@ -24,9 +23,9 @@ const login = async (req, res) => {
       error: "There is not user"
     })
 
-  // const salt = await bcrypt.genSalt(10);
-  // const cpassword = await bcrypt.hash(password, salt)
-  // console.log(cpassword)
+  const salt = await bcrypt.genSalt(10);
+  const cpassword = await bcrypt.hash(password, salt)
+  console.log(cpassword)
   const isMatch = await bcrypt.compare(password, user.password);
  
   if(!isMatch)

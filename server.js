@@ -1,6 +1,7 @@
-const PORT = process.env.PORT || 50000
+const PORT = process.env.PORT || 5000
 
 const express = require('express');
+const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
@@ -15,8 +16,6 @@ app.use(cors())
 connectDB()
 
 app.use('/api', authRouter)
-
-
 
 let server = app.listen(PORT, () => {
     console.log('Socket is listen on 5000')
